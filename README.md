@@ -25,7 +25,7 @@ Uma aplicação web desenvolvida para facilitar o controle e a organização das
 
 ## 🌐 Acesse o projeto
 
-**[Testar o Controle Financeiro](COLOQUE-SEU-LINK-AQUI)**
+**[Testar o Controle Financeiro](https://nirodrigues.github.io/controle-financeiro/)**
 
 ## 📸 Preview
 <img width="1911" height="907" alt="image" src="https://github.com/user-attachments/assets/3da6700d-ecdb-4738-ae01-78b15bf42e58" />

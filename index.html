@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style/stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:wdth@87.5&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Gestão financeira</title>
+</head>
+<body>
+    <nav id="sidebar"> 
+        <div class="sidebar_header">
+            <button id="open_btn">   
+                <i class="fa-solid fa-filter"></i>
+            </button>
+            <span class="sidebar-title">Filtros</span>
+        </div>
+        <div class="sidebar_item" id="filterDate">
+
+            <i class="fa-regular fa-calendar sidebar-icon"></i>
+
+            <div class="sidebar_content">
+                <label for="minDate">Período</label>
+                <input type="date" id="minDate">
+                <input type="date" id="maxDate">
+            </div>
+        </div>
+
+        <div class="sidebar_item">
+
+            <i class="fa-solid fa-up-down sidebar-icon"></i>
+
+            <div class="sidebar_content">
+                <label for="filterType">Tipo</label>
+                <select id="filterType">
+                    <option value="all">Todos</option>
+                    <option value="income">Entrada</option>
+                    <option value="expense">Saída</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="sidebar_item">
+
+            <i class="fa-solid fa-layer-group sidebar-icon"></i>
+            
+            <div class="sidebar_content">
+                <label for="filterCategory">Categoria</label>
+                <select id="filterCategory">
+                    <option value="all">Todas</option>
+    
+                    <option>Alimentação</option>
+                    <option>Assinaturas</option>
+                    <option>Bonificação</option>
+                    <option>Carro - despesas</option>
+                    <option>Compras</option>
+                    <option>Contas</option>
+                    <option>Educação</option>
+                    <option>Férias</option>
+                    <option>Freelance</option>
+                    <option>Investimento</option>
+                    <option>Lazer</option>
+                    <option>Moradia</option>
+                    <option>Outros</option>
+                    <option>Pets</option>
+                    <option>Roupas</option>
+                    <option>Saúde</option>
+                    <option>Salário</option>
+                    <option>Transporte</option>
+                    <option>Viagens</option>
+                    <option>13°</option>
+                </select>
+            </div>
+        </div>
+        <button id="clearFilters">Limpar filtros</button>
+
+    </nav>
+
+    <main>
+        <div class="greeting">
+            <h1>Olá, <span id="userName"></span>!</h1>
+            <p>Confira suas finanças hoje...</p>
+        </div>
+        <div class="resume">
+            <div>
+                Entradas: R$
+                <span class="incomes">0.00</span>
+            </div>
+            <div>
+                Saídas: R$
+                <span class="expenses">0.00</span>
+            </div>
+            <div>
+                Saldo: R$
+                <span class="total">0.00</span>
+            </div>
+        </div>
+        <div class="newItem">
+            <div class="divDate">
+                <label for="date">Data</label>
+                <input type="date" id="date"/>
+            </div>
+            <div class="divDesc">
+                <label for="desc">Descrição</label>
+                <input type="text" id="desc"/>
+            </div>
+            <div class="divAmount">
+                <label for="amount">Valor</label>
+                <input type="number" id="amount"/>
+            </div>
+            <div class="divType">
+                <label for="type">Tipo</label>
+                <select id="type">
+                    <option value="income">Entrada</option>
+                    <option value="expense">Saída</option>
+                </select>
+            </div>
+            <div class="divCategory" id="categoryContainer">
+                <label for="categ">Categoria</label>
+                <select id="category">
+                    <option value="-">-</option>
+                    <option value="Alimentação"><i class="fa-solid fa-utensils"></i>Alimentação</option>
+                    <option value="Assinaturas">Assinaturas</option>
+                    <option value="Compras">Compras</option>
+                    <option value="Contas">Contas</option>
+                    <option value="Carro - despesas">Carro - despesas</option>
+                    <option value="Educação">Educação</option>
+                    <option value="Investimento">Investimento</option>
+                    <option value="Lazer">Lazer</option>
+                    <option value="Moradia">Moradia</option>
+                    <option value="Pets">Pets</option>
+                    <option value="Roupas">Roupas</option>
+                    <option value="Saúde">Saúde</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Viagens">Viagens</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+            <div class="divIncome" id="incomeContainer">
+                <label for="incomeCateg">Categoria</label>
+                <select id="incomeCategory">
+                    <option value="-">-</option>
+                    <option value="Bonificação">Bonificação</option>
+                    <option value="Freelance">Freelance</option>
+                    <option value="Férias">Férias</option>
+                    <option value="Salário">Salário</option>
+                    <option value="13°">13°</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+            <button id="btnNew">Inserir</button>
+        </div>
+
+        <div class="divTable">
+            <table class="classTable">
+                <thead>
+                    <tr>                        
+                        <th class="columnDate">Data</th>
+                        <th class="columnCateg">Categoria</th>
+                        <th class="columnAmount">Valor</th>
+                        <th class="columnType">Tipo</th> 
+                        <th class="columnDescription">Descrição</th>
+                        <th class="columnAction"></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    </main>
+    <div id="nameModal" class="name-modal">
+        <div class="name-box">
+            <h2>Olá! 👋</h2>
+            <p>Como podemos chamar você?</p>
+            <input type="text" id="nameInput" placeholder="Digite seu nome">
+            <button id="saveName">Continuar</button>
+        </div>
+    </div>
+    <script src="./src/script.js"></script>
+</body>
+</html>
